@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  # source name is the dataset in BigQuery 
+  - name: stripe 
+    description: An export of a Stripe payments
+    # databases are project IDs in BigQuery
+    database: dbt-tutorial
+    tables:
+      - name: payment
+        description: Stripe payments 
+        columns: 
+          - name: id
+            description: Primary key for payments
+            tests: 
+              - unique
+              - not_null
