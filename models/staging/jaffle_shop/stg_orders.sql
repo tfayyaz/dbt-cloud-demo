@@ -11,4 +11,4 @@ with orders as (
 
 )
 
-select * from orders
+select * from {{ source('jaffle_shop','orders') }}
